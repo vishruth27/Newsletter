@@ -17,7 +17,8 @@ app.post("/", (req, res) => {
     const firstName = req.body.fname;
     const lastName = req.body.lname;
     const email = req.body.email;
-    const url = "https://us10.api.mailchimp.com/3.0/lists/8701901c0f";
+    //const audienceID = 'add audeince id here'
+    const url = "https://us10.api.mailchimp.com/3.0/lists/" + audienceID;
 
     const data = {
         members: [
@@ -34,9 +35,12 @@ app.post("/", (req, res) => {
 
     jsonData = JSON.stringify(data);
 
+    //auth variable is a string, which stores any string, followed by a colon, followed by your API key
+    //for ex, auth: 'name:fdjsdfjgneroinoirebgoindfewinf'
+    
     const options = {
         method: "POST",
-        auth: "vishruth:653a9aeebe60f0f77efb6ae80a65d9ad-us10"
+        auth: ""
     };
 
 
